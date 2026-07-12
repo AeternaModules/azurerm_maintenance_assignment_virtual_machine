@@ -1,3 +1,7 @@
+output "maintenance_assignment_virtual_machines_id" {
+  description = "Map of id values across all maintenance_assignment_virtual_machines, keyed the same as var.maintenance_assignment_virtual_machines"
+  value       = { for k, v in azurerm_maintenance_assignment_virtual_machine.maintenance_assignment_virtual_machines : k => v.id }
+}
 output "maintenance_assignment_virtual_machines_location" {
   description = "Map of location values across all maintenance_assignment_virtual_machines, keyed the same as var.maintenance_assignment_virtual_machines"
   value       = { for k, v in azurerm_maintenance_assignment_virtual_machine.maintenance_assignment_virtual_machines : k => v.location }
